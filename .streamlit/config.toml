@@ -1,0 +1,7 @@
+[theme]
+primaryColor="#5c8754"       # Dark green, same as backgroundColor
+backgroundColor="#1e392a"   # Even darker green
+secondaryBackgroundColor="#3a5c43"  # Slightly lighter than the background
+textColor="#ffffff"          # White for text
+font="sans serif"
+base = "dark"
