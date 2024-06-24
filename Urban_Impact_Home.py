@@ -30,7 +30,7 @@ st.markdown("""
 st.markdown('<div class="main-header">Welcome to Urban Impact!</div>', unsafe_allow_html=True)
 
 # Open the image file
-img = Image.open(r'pages\\images\\Urban_Impact_Logo_3.png')
+img = Image.open(r'pages/images/Urban_Impact_Logo_3.png')
 
 # Resize the image
 img = img.resize((300,275))
@@ -76,15 +76,15 @@ st.markdown(custom_css, unsafe_allow_html=True)
 
 def feature_1():
     st.markdown('<div class="sub-header">Analyze and Report Issues in Your City</div>', unsafe_allow_html=True)
-    st.image(r'pages\\images\\feat_1_ss.png')
+    st.image(r'pages/images/feat_1_ss.png')
 
 def feature_2():
     st.markdown('<div class="sub-header">Envision Your Ideal City</div>', unsafe_allow_html=True)
-    st.image(r'pages\\images\\feat_2_ss.png')
+    st.image(r'pages/images/feat_2_ss.png')
 
 def feature_3():
     st.markdown('<div class="sub-header">Stay Updated with the Latest News</div>', unsafe_allow_html=True)
-    st.image(r'pages\\images\\feat_3_ss.png')
+    st.image(r'pages/images/feat_3_ss.png')
 
 with col1:
     if st.button("Analyze and Report Issues in Your City 📄"):
