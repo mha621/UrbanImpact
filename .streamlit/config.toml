@@ -1,7 +1,7 @@
 [theme]
-primaryColor="#5c8754"       # Dark green, same as backgroundColor
-backgroundColor="#1e392a"   # Even darker green
-secondaryBackgroundColor="#3a5c43"  # Slightly lighter than the background
-textColor="#ffffff"          # White for text
-font="sans serif"
-base = "dark"
+primaryColor = "#fcfcfc"        # White, used for accents and interactive widgets
+backgroundColor = "#E0E0E0"     # Light gray, used in the main content area of the app
+secondaryBackgroundColor = "#84BABF"  # Light teal, for secondary elements and added contrast
+textColor = "#333333"           # Dark gray for text, ensuring good readability
+font = "sans serif"
+base = "light"                  # A light base to keep the theme bright and airy

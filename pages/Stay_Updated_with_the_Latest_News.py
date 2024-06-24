@@ -8,21 +8,79 @@ import openai
 from openai import OpenAI
 from pathlib import Path
 
-st.sidebar.markdown("# Stay Updated with the Latest News in San Jose!")
+# HTML for custom styling
+st.markdown("""
+<style>
+.main-header {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    color: #004d40;  /* Dark teal color */
+}
+.sub-header {
+    font-size: 26px;
+    text-align: center;
+    color: #00796b;  /* Lighter teal */
+}
+.body-text {
+    font-size: 18px;
+    text-align: center;
+    color: #333333;  /* Dark gray for readability */
+}
+.notice-consent {
+    font-size: 18px;
+    text-align: center;
+    color: #FF0000 /* Red for notice of consent */
+}
+</style>
+""", unsafe_allow_html=True)
 
-openai.api_key = os.environ["OPENAI_API_KEY"]
+st.markdown("<h1 style='text-align: center;'>Stay Updated with the Latest News 🗞️</h1>", unsafe_allow_html=True)
+st.sidebar.markdown("# Stay Updated with the Latest News")
 
-client = OpenAI()
+st.write("")
+st.markdown('<div class="body-text">Stay informed about urban development and civic engagement in San Jose with ease! \
+            Browse our curated list of PDF articles covering a broad spectrum of topics—from city planning and infrastructure improvements to community initiatives and walkability enhancements. \
+            Select the article you\'re interested in and choose from three options: receive a concise summary, explore key points, or access the full transcription. \
+            Whatever your preference, our app ensures you\'re well-informed on the latest discussions, plans, and news shaping the city\'s future.</div>', unsafe_allow_html=True)
 
-def main():
-    st.title("Stay Updated on the Latest News in San Jose! 📰")
-    st.write("")
-    st.write("Stay informed about urban development and walkability in San Jose with ease! Browse our curated list of PDF articles covering a range of topics. Select the article you're interested in and choose from three options: receive a summary, explore key points, or access the full transcription. Whatever your preference, our app ensures you're up-to-date on the latest discussions, plans, and news shaping the city's future.")
+st.write("")
+
+st.markdown('<div class="notice-consent">Check the box below to accept our terms and proceed to the image analysis and reporting feature.</div>', unsafe_allow_html=True)
+
+st.write("")
+
+# Define the custom CSS
+custom_css = """
+<style>
+    .stButton>button {
+        color: white;
+        background-color: #84BABF;
+        border: none;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+</style>
+"""
+
+# Inject the custom CSS
+st.markdown(custom_css, unsafe_allow_html=True)
 
 
-    st.write("")
-    st.write("**Notice of Consent:** Your privacy matters to us. By using our app, you consent to the collection and use of your data, including location and images, to enhance your experience and provide personalized recommendations. Rest assured, we prioritize the security and confidentiality of your information. For more details, please review our privacy policy.")
-    st.write("*"*40)
+if st.checkbox('I agree to the terms and conditions'):
+    # Display some content when the checkbox is checked
+    st.write('You have agreed to our terms and conditions. Please proceed to stay updated on your city\'s latest news.')
+
+    openai.api_key = os.environ["OPENAI_API_KEY"]
+
+    client = OpenAI()
+
     def get_summary(text):
         response = client.chat.completions.create(
             model="gpt-4-turbo",
@@ -39,7 +97,7 @@ def main():
             ]
         )
         return response.choices[0].message.content
-    
+
     def get_key_points(text):
         response = client.chat.completions.create(
             model="gpt-4-turbo",
@@ -73,7 +131,7 @@ def main():
             ]
         )
         return response.choices[0].message.content
-    
+
     def get_sentiment(transcription):
         response = client.chat.completions.create(
             model="gpt-4-turbo",
@@ -99,18 +157,20 @@ def main():
     # Get a list of all the PDF files in the "articles" folder
     pdf_files = [f for f in os.listdir(r'C:\Users\Michelle\Downloads\UrbanImpact\pages\articles') if f.endswith('.pdf')]
 
-    st.write("Please select an article from the list below before choosing what you would like to see.")
+    st.markdown('<div class="notice-consent">Please select an article from the list below before choosing what you would like to see, otherwise there will be nothing to display.</div>', unsafe_allow_html=True)
+    st.write("")
+    st.write("")
     # Let the user select a file
-    selected_file = st.selectbox('Select one of the following articles:', pdf_files)
+    selected_file = st.selectbox('Select one of the following articles:', pdf_files, help = 'Select an article from the list to view its summary, key points, or full transcription.')
 
     # Let the user select an option
     options = ['Summary', 'Key Points', 'Full Transcription']
-    selected_option = st.selectbox('What would you like to see?', options)
+    selected_option = st.selectbox('What would you like to see?', options, help = 'Select an option to view the summary, key points, or full transcription of the selected article.')
 
     # Open the selected file
     selected_file_path = os.path.join(r'C:\Users\Michelle\Downloads\UrbanImpact\pages\articles', selected_file)
 
-# Open the selected file
+    # Open the selected file
     with fitz.open(selected_file_path) as doc:
         text = ""
         for page in doc:
@@ -136,8 +196,5 @@ def main():
             page = pdf.load_page(i)
             full_text += page.get_text("text")
 
-            
-if __name__ == "__main__":
-    main()
 
-    
+
