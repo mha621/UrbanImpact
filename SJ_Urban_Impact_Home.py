@@ -27,7 +27,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Display the custom-styled text
-st.markdown('<div class="main-header">Welcome to Urban Impact!</div>', unsafe_allow_html=True)
+st.markdown('<div class="main-header">Welcome to SJ Urban Impact!</div>', unsafe_allow_html=True)
 
 # Open the image file
 img = Image.open(r'pages/images/Urban_Impact_Logo_3.png')
@@ -48,7 +48,7 @@ with col2:
     st.image(img)
 
 st.markdown('<div class="sub-header">Empowering Community Engagement in San Jose</div>', unsafe_allow_html=True)
-st.markdown('<div class="body-text">Urban Impact goes beyond increasing walkability to enhance civic engagement throughout San Jose. With our innovative tools, you can report city issues, visualize solutions through image generation, and stay updated with the latest news in the city. Explore San Jose\'s streets through your lens, contribute to shaping its future, and engage with your community more deeply. Your insights drive the transformation towards a more vibrant and inclusive urban environment.</div>', unsafe_allow_html=True)
+st.markdown('<div class="body-text">SJ Urban Impact goes beyond increasing walkability to enhance civic engagement throughout San Jose. With our innovative tools, you can report city issues, visualize solutions through image generation, and stay updated with the latest news in the city. Explore San Jose\'s streets through your lens, contribute to shaping its future, and engage with your community more deeply. Your insights drive the transformation towards a more vibrant and inclusive urban environment.</div>', unsafe_allow_html=True)
 
 col1, col2, col3 = st.columns([2,2,2])
 
