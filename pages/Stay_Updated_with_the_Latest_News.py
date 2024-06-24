@@ -155,7 +155,7 @@ if st.checkbox('I agree to the terms and conditions'):
         # st.title("Stay Updated with the Latest News")
 
     # Get a list of all the PDF files in the "articles" folder
-    pdf_files = [f for f in os.listdir(r'C:\Users\Michelle\Downloads\UrbanImpact\pages\articles') if f.endswith('.pdf')]
+    pdf_files = [f for f in os.listdir(r'pages\articles') if f.endswith('.pdf')]
 
     st.markdown('<div class="notice-consent">Please select an article from the list below before choosing what you would like to see, otherwise there will be nothing to display.</div>', unsafe_allow_html=True)
     st.write("")
@@ -168,7 +168,7 @@ if st.checkbox('I agree to the terms and conditions'):
     selected_option = st.selectbox('What would you like to see?', options, help = 'Select an option to view the summary, key points, or full transcription of the selected article.')
 
     # Open the selected file
-    selected_file_path = os.path.join(r'C:\Users\Michelle\Downloads\UrbanImpact\pages\articles', selected_file)
+    selected_file_path = os.path.join(r'pages\articles', selected_file)
 
     # Open the selected file
     with fitz.open(selected_file_path) as doc:
