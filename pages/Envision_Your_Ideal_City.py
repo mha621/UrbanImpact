@@ -30,6 +30,10 @@ st.markdown("""
     text-align: center;
     color: #FF0000 /* Red for notice of consent */
 }
+.body-2 {
+    font-size: 24px;
+    color: #00796b;  /* Dark gray for readability */
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -127,6 +131,8 @@ if st.checkbox('I agree to the terms and conditions'):
 
     features = ['expanded and improved sidewalks', 'more bike lanes', 'more green spaces like parks, gardens, trees, and flowers', 'better lighting in streets to improve safety', 'pedestrian streets, plazas, and courtyards to prioritize pedestrians over vehicles']
 
+    st.markdown('<div class="body-2">Option 1: Select a feature from the drop-down menu.</div>', unsafe_allow_html=True)
+    st.write("")
     st.write("If you cannot think of any ideas about what you would like in your ideal city, feel free to choose from the dropdown menu below!")
 
     selected_feature = st.selectbox('Select a feature you would like to see more of in your city:', features, help = "Select a feature from the dropdown menu to generate an image of your ideal city.")
@@ -149,7 +155,8 @@ if st.checkbox('I agree to the terms and conditions'):
     st.write("")
     st.write("*"*40)
 
-    # ...
+    st.markdown('<div class="body-2">Option 2: Write your own prompt.</div>', unsafe_allow_html=True)
+    st.write("")
     st.write("Otherwise, if you know what you have an idea of what you would like in your ideal city, please type it in the text box below!")
     # st.write("When describing your ideal city, try to be as specific as possible. For example, you could say 'I would like a city with lots of green spaces, bike lanes, and pedestrian-friendly streets. I would also like to have a park with a lake and a playground.' The more specific you are, the better the AI will be able to generate an image that matches your description.")
 
