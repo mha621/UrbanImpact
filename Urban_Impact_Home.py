@@ -50,48 +50,60 @@ with col2:
 st.markdown('<div class="sub-header">Empowering Community Engagement in San Jose</div>', unsafe_allow_html=True)
 st.markdown('<div class="body-text">SJ Urban Impact goes beyond increasing walkability to enhance civic engagement throughout San Jose. With our innovative tools, you can report city issues, visualize solutions through image generation, and stay updated with the latest news in the city. Explore San Jose\'s streets through your lens, contribute to shaping its future, and engage with your community more deeply. Your insights drive the transformation towards a more vibrant and inclusive urban environment.</div>', unsafe_allow_html=True)
 
-col1, col2, col3 = st.columns([2,2,2])
+
+st.write("")
+st.write("")
+st.write("")
+st.write("")
+
+st.markdown('<div class="sub-header">Please feel free to click around and explore the 3 main features of this app using the sidebar on the left.</div>', unsafe_allow_html=True)
+st.write("")
+
+st.markdown('<div class="body-text">Feature 1: Analyze and Report Issues in Your City</div>', unsafe_allow_html=True)
+st.markdown('<div class="body-text">Feature 2: Envision Your Ideal City</div>', unsafe_allow_html=True)
+st.markdown('<div class="body-text">Feature 3: Stay Updated with the Latest News</div>', unsafe_allow_html=True)
+#col1, col2, col3 = st.columns([2,2,2])
 
 # Define the custom CSS
-custom_css = """
-<style>
-    .stButton>button {
-        color: white;
-        background-color: #84BABF;
-        border: none;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-        border-radius: 4px;
-    }
-</style>
-"""
+#custom_css = """
+#<style>
+    #.stButton>button {
+        #color: white;
+        #background-color: #84BABF;
+        #border: none;
+        #padding: 15px 32px;
+        #text-align: center;
+        #text-decoration: none;
+        #display: inline-block;
+        #font-size: 16px;
+        #margin: 4px 2px;
+        #cursor: pointer;
+        #border-radius: 4px;
+    #}
+#</style>
+#"""
 
 # Inject the custom CSS
-st.markdown(custom_css, unsafe_allow_html=True)
+#st.markdown(custom_css, unsafe_allow_html=True)
 
-def feature_1():
-    st.markdown('<div class="sub-header">Analyze and Report Issues in Your City</div>', unsafe_allow_html=True)
-    st.image(r'pages/images/feat_1_ss.png')
+#def feature_1():
+    #st.markdown('<div class="sub-header">Analyze and Report Issues in Your City</div>', unsafe_allow_html=True)
+    #st.image(r'pages/images/feat_1_ss.png')
 
-def feature_2():
-    st.markdown('<div class="sub-header">Envision Your Ideal City</div>', unsafe_allow_html=True)
-    st.image(r'pages/images/feat_2_ss.png')
+#def feature_2():
+    #st.markdown('<div class="sub-header">Envision Your Ideal City</div>', unsafe_allow_html=True)
+    #st.image(r'pages/images/feat_2_ss.png')
 
-def feature_3():
-    st.markdown('<div class="sub-header">Stay Updated with the Latest News</div>', unsafe_allow_html=True)
-    st.image(r'pages/images/feat_3_ss.png')
+#def feature_3():
+    #st.markdown('<div class="sub-header">Stay Updated with the Latest News</div>', unsafe_allow_html=True)
+    #st.image(r'pages/images/feat_3_ss.png')
 
-with col1:
-    if st.button("Analyze and Report Issues in Your City 📄"):
-        feature_1()
-with col2:
-    if st.button("Envision Your Ideal City 🖼️"):
-        feature_2()
-with col3:
-    if st.button("Stay Updated with the Latest News 🗞️"):
-        feature_3()
+#with col1:
+    #if st.button("Analyze and Report Issues in Your City 📄"):
+        #feature_1()
+#with col2:
+    #if st.button("Envision Your Ideal City 🖼️"):
+        #feature_2()
+#with col3:
+    #if st.button("Stay Updated with the Latest News 🗞️"):
+        #feature_3()
