@@ -10,43 +10,43 @@ import requests
 st.markdown("""
 <style>
 .main-header {
-    font-size: 40px;
+    font-size: 50px;
     font-weight: bold;
     text-align: center;
-    color: #004d40;  /* Dark teal color */
+    color: #333333;
+    font-family: 'Tahoma', sans-serif;
 }
 .sub-header {
-    font-size: 26px;
+    font-size: 32px;
     text-align: center;
-    color: #00796b;  /* Lighter teal */
+    color: #00796b;
+    font-family: 'Tahoma', sans-serif;
 }
 .body-text {
-    font-size: 18px;
+    font-size: 24px;
     text-align: center;
-    color: #333333;  /* Dark gray for readability */
+    color: #333333;
+    font-family: 'Tahoma', sans-serif;
 }
 .notice-consent {
-    font-size: 18px;
+    font-size: 24px;
     text-align: center;
-    color: #FF0000 /* Red for notice of consent */
+    color: #FF0000;
+    font-family: 'Tahoma', sans-serif;
 }
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("<h1 style='text-align: center;'>Analyze and Report Issues in Your City 📄</h1>", unsafe_allow_html=True)
+st.markdown('<div class="main-header">Analyze and Report Issues in Your City 📄</div>', unsafe_allow_html=True)
 st.sidebar.markdown("# Analyze and Report Issues in Your City")
 
 st.write("")
-st.markdown('<div class="body-text">Capture the essence of your city to identify and address urban challenges. \
-        Share an image to highlight any issue—traffic problems, unsafe pedestrian areas, or anything that affects your daily life in San Jose. \
-        Our AI-powered tool will analyze the image and provide insights to help us collectively enhance our urban environment. \
-        Together, we can create a more vibrant, accessible, and engaging community.</div>', unsafe_allow_html=True)
+st.markdown('<div class="body-text">Share images of urban challenges in San Jose to receive AI-powered insights for \
+            improving our community. Let&#39;s create a more vibrant, accessible, and engaging city together.</div>', unsafe_allow_html=True)
 
 st.write("")
 
-st.markdown('<div class="notice-consent">By submitting an image, you agree to share it with our AI model for analysis. \
-            The image will be used solely for the purpose of providing insights on urban issues and will not be stored or shared with third parties. \
-            By using this feature, you are choosing to accept our terms.</div>', unsafe_allow_html=True)
+st.markdown('<div class="notice-consent">By using this feature, you are choosing to accept our terms and conditions.</div>', unsafe_allow_html=True)
 
 st.write("")
 
@@ -61,7 +61,7 @@ custom_css = """
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-size: 16px;
+        font-size: 24px;
         margin: 4px 2px;
         cursor: pointer;
         border-radius: 4px;

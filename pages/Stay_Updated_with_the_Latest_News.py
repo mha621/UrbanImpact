@@ -12,41 +12,43 @@ from pathlib import Path
 st.markdown("""
 <style>
 .main-header {
-    font-size: 40px;
+    font-size: 50px;
     font-weight: bold;
     text-align: center;
-    color: #004d40;  /* Dark teal color */
+    color: #333333;
+    font-family: 'Tahoma', sans-serif;
 }
 .sub-header {
-    font-size: 26px;
+    font-size: 32px;
     text-align: center;
-    color: #00796b;  /* Lighter teal */
+    color: #00796b; 
+    font-family: 'Tahoma', sans-serif;
 }
 .body-text {
-    font-size: 18px;
+    font-size: 24px;
     text-align: center;
-    color: #333333;  /* Dark gray for readability */
+    color: #333333;
+    font-family: 'Tahoma', sans-serif;
 }
 .notice-consent {
-    font-size: 18px;
+    font-size: 24px;
     text-align: center;
-    color: #FF0000 /* Red for notice of consent */
+    color: #FF0000; 
+    font-family: 'Tahoma', sans-serif;
 }
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("<h1 style='text-align: center;'>Stay Updated with the Latest News 🗞️</h1>", unsafe_allow_html=True)
+st.markdown('<div class="main-header">Stay Updated with the Latest News 🗞️</div>', unsafe_allow_html=True)
 st.sidebar.markdown("# Stay Updated with the Latest News")
 
 st.write("")
-st.markdown('<div class="body-text">Stay informed about urban development and civic engagement in San Jose with ease! \
-            Browse our curated list of PDF articles covering a broad spectrum of topics—from city planning and infrastructure improvements to community initiatives and walkability enhancements. \
-            Select the article you\'re interested in and choose from three options: receive a concise summary, explore key points, or access the full transcription. \
-            Whatever your preference, our app ensures you\'re well-informed on the latest discussions, plans, and news shaping the city\'s future.</div>', unsafe_allow_html=True)
+st.markdown('<div class="body-text">Stay updated on San Jose&#39;s urban development with our curated PDF articles! \
+            Choose to receive a summary, key points, or the full text to stay informed on city planning, infrastructure, and community initiatives.</div>', unsafe_allow_html=True)
 
 st.write("")
 
-st.markdown('<div class="notice-consent">By using this feature, you are choosing to accept our terms.</div>', unsafe_allow_html=True)
+st.markdown('<div class="notice-consent">By using this feature, you are choosing to accept our terms and conditions.</div>', unsafe_allow_html=True)
 
 st.write("")
 
@@ -61,7 +63,7 @@ custom_css = """
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-size: 16px;
+        font-size: 24px;
         margin: 4px 2px;
         cursor: pointer;
         border-radius: 4px;
@@ -160,9 +162,6 @@ pdf_files = [f for f in os.listdir(r'pages/articles') if f.endswith('.pdf')]
 st.write("")
 st.write("")
 st.write("")
-st.markdown('<div class="notice-consent">Please select an article from the list below before choosing what you would like to see, otherwise there will be nothing to display.</div>', unsafe_allow_html=True)
-st.write("")
-st.write("")
 # Let the user select a file
 selected_file = st.selectbox('Select one of the following articles:', pdf_files, help = 'Select an article from the list to view its summary, key points, or full transcription.')
 
@@ -179,25 +178,26 @@ with fitz.open(selected_file_path) as doc:
     for page in doc:
         text += page.get_text("text")
 
-if selected_option == 'Summary':
-    # Get a summary of the text
-    summary = get_summary(text)
-    st.write(summary)
-elif selected_option == 'Key Points':
-    # Get the key points of the text
-    key_points = get_key_points(text)
-    st.write(key_points)
-else:
-    # Display the full transcription of the article
-    st.write(text)
-    # Load the PDF
-    pdf = fitz.open(selected_file_path)
-    
-    # Concatenate the text from all pages
-    full_text = ""
-    for i in range(len(pdf)):
-        page = pdf.load_page(i)
-        full_text += page.get_text("text")
+if st.button('Submit'):
+    if selected_option == 'Summary':
+        # Get a summary of the text
+        summary = get_summary(text)
+        st.write(summary)
+    elif selected_option == 'Key Points':
+        # Get the key points of the text
+        key_points = get_key_points(text)
+        st.write(key_points)
+    else:
+        # Display the full transcription of the article
+        st.write(text)
+        # Load the PDF
+        pdf = fitz.open(selected_file_path)
+        
+        # Concatenate the text from all pages
+        full_text = ""
+        for i in range(len(pdf)):
+            page = pdf.load_page(i)
+            full_text += page.get_text("text")
 
 
 

@@ -10,46 +10,48 @@ from pathlib import Path
 st.markdown("""
 <style>
 .main-header {
-    font-size: 40px;
+    font-size: 50px;
     font-weight: bold;
     text-align: center;
-    color: #004d40;  /* Dark teal color */
+    color: #333333; 
+    font-family: 'Tahoma', sans-serif;
 }
 .sub-header {
-    font-size: 26px;
+    font-size: 32px;
     text-align: center;
-    color: #00796b;  /* Lighter teal */
+    color: #00796b;
+    font-family: 'Tahoma', sans-serif;
 }
 .body-text {
-    font-size: 18px;
+    font-size: 24px;
     text-align: center;
-    color: #333333;  /* Dark gray for readability */
+    color: #333333;
+    font-family: 'Tahoma', sans-serif;
 }
 .notice-consent {
-    font-size: 18px;
+    font-size: 24px;
     text-align: center;
-    color: #FF0000 /* Red for notice of consent */
+    color: #FF0000; 
+    font-family: 'Tahoma', sans-serif;
 }
 .body-2 {
     font-size: 24px;
-    color: #00796b;  /* Dark gray for readability */
+    color: #00796b; 
+    font-family: 'Tahoma', sans-serif;
 }
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("<h1 style='text-align: center;'>Envision Your Ideal City 📷</h1>", unsafe_allow_html=True)
+st.markdown('<div class="main-header">Envision Your Ideal City 📷</div>', unsafe_allow_html=True)
 st.sidebar.markdown("# Envision Your Ideal City")
 
 st.write("")
-st.markdown('<div class="body-text">Paint the picture of your ideal urban landscape! You have two options to help our app create a visual rendering of your ideal future cityscape. \
-            You can either select a feature from the dropdown menu or describe the features you envision in your dream city, from vibrant pedestrian-friendly streets to green spaces and community hubs. \
-            Whether you choose from the menu or write your own description, your input will guide the creation of an image that represents your ideal city.</div>', unsafe_allow_html=True)
+st.markdown('<div class="body-text">Envision your dream city by selecting features from a menu or describing your vision, \
+            and watch our app bring it to life.</div>', unsafe_allow_html=True)
 
 st.write("")
 
-st.markdown('<div class="notice-consent">By submitting a description, you agree to share it with our AI model for image generation. \
-            The image will be used solely for the purpose of creating a visual representation of your ideal city and will not be stored or shared with third parties. \
-            By using this feature, you are choosing to accept our terms.</div>', unsafe_allow_html=True)
+st.markdown('<div class="notice-consent">By using this feature, you are choosing to accept our terms and conditions.</div>', unsafe_allow_html=True)
 
 st.write("")
 
@@ -64,7 +66,7 @@ custom_css = """
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-size: 16px;
+        font-size: 24px;
         margin: 4px 2px;
         cursor: pointer;
         border-radius: 4px;

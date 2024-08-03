@@ -8,26 +8,31 @@ import io
 st.markdown("""
 <style>
 .main-header {
-    font-size: 40px;
+    font-size: 50px;
     font-weight: bold;
     text-align: center;
-    color: #004d40;  /* Dark teal color */
+    color: #004d40;
+    font-family: 'Tahoma', sans-serif;
 }
 .sub-header {
-    font-size: 26px;
+    font-size: 32px;
     text-align: center;
-    color: #00796b;  /* Lighter teal */
+    color: #00796b;
+    font-family: 'Tahoma', sans-serif;
 }
 .body-text {
-    font-size: 18px;
+    font-size: 24px;
     text-align: center;
-    color: #333333;  /* Dark gray for readability */
+    color: #333333; 
+    font-family: 'Tahoma', sans-serif;
 }
 </style>
 """, unsafe_allow_html=True)
 
 # Display the custom-styled text
 st.markdown('<div class="main-header">Welcome to SJ Urban Impact!</div>', unsafe_allow_html=True)
+st.write("")
+st.write("")
 
 # Open the image file
 img = Image.open(r'pages/images/Urban_Impact_Logo_3.png')
@@ -47,21 +52,20 @@ col1, col2, col3 = st.columns([1,2,1])
 with col2:
     st.image(img)
 
-st.markdown('<div class="sub-header">Empowering Community Engagement in San Jose</div>', unsafe_allow_html=True)
-st.markdown('<div class="body-text">SJ Urban Impact goes beyond increasing walkability to enhance civic engagement throughout San Jose. With our innovative tools, you can report city issues, visualize solutions through image generation, and stay updated with the latest news in the city. Explore San Jose\'s streets through your lens, contribute to shaping its future, and engage with your community more deeply. Your insights drive the transformation towards a more vibrant and inclusive urban environment.</div>', unsafe_allow_html=True)
-
-
 st.write("")
-st.write("")
+#st.markdown('<div class="sub-header">Empowering Community Engagement in San Jose</div>', unsafe_allow_html=True)
+st.markdown('<div class="body-text">Our goal at SJ Urban Impact is to enhance civic engagement by providing innovative tools for reporting\
+            city issues, visualizing solutions, staying updated on local news, and contributing to a virbant urban environment.</div>', unsafe_allow_html=True)
+
 st.write("")
 st.write("")
 
 st.markdown('<div class="sub-header">Please feel free to click around and explore the 3 main features of this app using the sidebar on the left.</div>', unsafe_allow_html=True)
 st.write("")
 
-st.markdown('<div class="body-text">Feature 1: Analyze and Report Issues in Your City</div>', unsafe_allow_html=True)
-st.markdown('<div class="body-text">Feature 2: Envision Your Ideal City</div>', unsafe_allow_html=True)
-st.markdown('<div class="body-text">Feature 3: Stay Updated with the Latest News</div>', unsafe_allow_html=True)
+#st.markdown('<div class="body-text">Feature 1: Analyze and Report Issues in Your City</div>', unsafe_allow_html=True)
+#st.markdown('<div class="body-text">Feature 2: Envision Your Ideal City</div>', unsafe_allow_html=True)
+#st.markdown('<div class="body-text">Feature 3: Stay Updated with the Latest News</div>', unsafe_allow_html=True)
 #col1, col2, col3 = st.columns([2,2,2])
 
 # Define the custom CSS
